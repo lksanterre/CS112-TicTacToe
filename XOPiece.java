@@ -5,7 +5,7 @@ public class XOPiece
       */
     public static enum XO {X, O}
 
-    public XO type;
+    private XO type;
 
     /** Constructor to hold an empty piece 
       * that is neither X or O. An empty 
@@ -26,11 +26,18 @@ public class XOPiece
         
     }
 
+    public boolean isEmpty()
+    {
+        if(type == null)
+            return true;
+        return false;
+    }
+
     public String toString()
     {
         String returnString = null;
         if (type == null){
-            returnString = "   ";
+            returnString = "---";
         }
         else if (type == XO.X){
             returnString = "-X-";
